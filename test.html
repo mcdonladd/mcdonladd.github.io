@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Shuffle</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Word Shuffle</h1>
+        <div id="grid">
+            <!-- Display the grid of letters here -->
+        </div>
+        <input type="text" id="wordInput" placeholder="Enter your word">
+        <button onclick="submitWord()">Submit</button>
+        <div id="guessedWords">
+            <!-- Display the list of guessed words here -->
+        </div>
+        <div id="score">Score: <span id="scoreValue">0</span></div>
+        <div id="timer">Time Remaining: <span id="time">120</span> seconds</div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
