@@ -5,7 +5,9 @@
     top: 8px;
     left: 16px;
     font-size: 18px;
+    z-index: 2000; /* Ensure it's above other content */
 }
+
 
 
 /* The side navigation menu */
@@ -13,13 +15,13 @@
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    z-index: 2000; /* Ensure it's above other content */
 }
 
 /* The navigation menu links */
@@ -31,6 +33,7 @@
     display: block;
     transition: 0.3s;
     font-family: Cheltenham;
+
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -59,3 +62,135 @@
     .sidenav a {font-size: 18px;}
 }
 
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e6e6dd; /* Change background color as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo {
+    height: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+.middlesection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    margin-top: 100px;
+    background-color: #809bce; /* Change background color as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+    position: relative;
+    }
+
+
+.tile {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange content vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.tile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay color */
+    opacity: 0;
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+
+
+.tile img {
+    width: 50%;
+    height: auto;
+    padding-top: 60px;
+}
+
+.fade {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.tile:hover .fade {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+}
+
+.text a {
+    color: inherit; /* Use the color inherited from the parent */
+    text-decoration: none; /* Remove default underline */
+}
+
+.text a:hover {
+    color: inherit; /* Change color on hover if needed */
+}
+
+.keyboard {
+    width: 100%;
+    scale: 120%;
+}
+
+.keyboard-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard button{
+    background-color: #85A5c2;
+    color: white;
+    outline: none;
+    border: 1px solid black;
+    padding: 1em;
+    cursor: pointer;
+    margin-bottom: 0.4em;
+    border-radius: 4px;
+    text-transform: capitalize;
+    scale: 100%;
+}
+
+.guessed-word {
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: black;
+    border-left: 5px solid #ccc;
+    border-radius: 5px;
+}
+
+.guessedWordsContainer {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #809bce;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
