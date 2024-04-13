@@ -194,3 +194,115 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0efeb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #a7bed3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-end;
+}
+
+.content{
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-family: Cheltenham;
+    font-weight: bold;
+}
+
+
+#hintDisplay{
+    display: flex;
+    text-align: center;
+    padding: 25px;
+    background-color: #809bce;
+    font-size: 20px;
+    font-family: Cheltenham;
+    font-weight: bold;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+#grid div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#wordInput {
+    width: calc(100% - 120px);
+//margin-right: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+#guessedWords {
+    margin-bottom: 20px;
+    display: flex; /* Add this line */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+#score {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#timer {
+    font-size: 18px;
+}
+
+@keyframes flip {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.animated {
+    animation: flip 0.5s ease;
+}
+
+#displayWord {
+    font-family: Cheltenham;
+    font-size: 50px;
+    color: #333; /* Change the color to your preference */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 20px; /* Add some top margin for spacing */
+    /* Add more styles as needed */
+}

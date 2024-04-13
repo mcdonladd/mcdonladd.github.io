@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Hangman</title>
+</head>
+
+<body style="background-color: #f0efeb">
+
+<div class="top-bar">
+  <img src="images/1.png" alt="Logo" class="logo">
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="test.html">Game1</a>
+  <a href="#">Game2</a>
+  <a href="#">Game3</a>
+  <a href="#">Game4</a>
+</div>
+
+<div class="topleft" style="position: fixed; top: 0; left: 0;">
+  <img src="images/favicon-32x32.png" style="width: 30px; height: 30px; margin-right: 10px;" alt="Favicon">
+  <span style="font-size:40px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+</div>
+
+<div class="container">
+  <h1>Hangman</h1>
+
+  <div class="content">
+    <div class="manBox">
+      <img src="images/hangman-0.svg">
+    </div>
+
+    <div id="hangmanGrid">
+      <div id="displayWord"></div>
+    </div>
+  </div>
+
+  <div id="hintDisplay">
+    <p>hint</p>
+  </div>
+
+  <div id="wordInput"></div>
+
+  <div id="score">Score: <span id="scoreValue">0</span></div>
+
+  <div class="timer">
+    <div>Time Remaining: <h2 id="timeDisplay">00:00</h2></div>
+  </div>
+
+  <div class="keyboard">
+    <div class="keyboard-container">
+      <div>
+        <button>q</button><button>w</button><button>e</button><button>r</button><button>t</button><button>y</button><button>u</button><button>i</button><button>o</button><button>p</button>
+      </div>
+      <div>
+        <button>a</button><button>s</button><button>d</button><button>f</button><button>g</button><button>h</button><button>j</button><button>k</button><button>l</button>
+      </div>
+      <div>
+        <button>ENTER</button><button>z</button><button>x</button><button>c</button><button>v</button><button>b</button><button>n</button><button>m</button><button>DEL</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+<script src="wordList.js"></script>
+<script>
+  // Assuming you have the initial time set to 120 seconds
+  // Display the initial time
+  displayTime(timeSecond);
+  getWord();
+  // Start the countdown timer
+</script>
+
+</body>
+
+</html>
