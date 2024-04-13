@@ -1,4 +1,4 @@
-
+//adding a comment here
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
