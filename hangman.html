@@ -6,8 +6,6 @@
   <title>Hangman</title>
 </head>
 
-<body style="background-color: #f0efeb">
-
 <div class="top-bar">
   <img src="images/1.png" alt="Logo" class="logo">
 </div>
@@ -30,7 +28,7 @@
 
   <div class="content">
     <div class="manBox">
-      <img src="images/hangman-0.svg">
+      <img id="hangmanImage" src="images/hangman-0.svg">
     </div>
 
     <div id="hangmanGrid">
@@ -42,12 +40,10 @@
     <p>hint</p>
   </div>
 
-  <div id="wordInput"></div>
-
-  <div id="score">Score: <span id="scoreValue">0</span></div>
+  <span id="wordInput" style="display: none"></span>
 
   <div class="timer">
-    <div>Time Remaining: <h2 id="timeDisplay">00:00</h2></div>
+    <div> <h2 id="timeDisplay">00:00</h2></div>
   </div>
 
   <div class="keyboard">
@@ -64,6 +60,12 @@
     </div>
   </div>
 </div>
+
+
+<footer>
+  <p>info</p>
+</footer>
+
 
 <script src="scripts.js"></script>
 <script src="wordList.js"></script>

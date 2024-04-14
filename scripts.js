@@ -48,7 +48,7 @@ function initializeWordDisplay(word) {
 
 let wrongGuesses = 0;
 
-function revealLetter(word, guessedLetter){
+function revealLetter(word, guessedLetter) {
     const wordDisplay = document.getElementById("displayWord");
     const placeholders = wordDisplay.getElementsByClassName('letter-placeholder');
     let found = false;
@@ -58,39 +58,61 @@ function revealLetter(word, guessedLetter){
             found = true;
         }
     }
-    if (!found){
+    if (!found) {
         wrongGuesses++;
-        document.getElementById("wrongGuesses").textContent = wrongGuesses;
         document.getElementById("hangmanImage").src = "images/hangman-" + wrongGuesses + ".svg";
-    } else {
-        // Disable the button corresponding to the guessed letter
-        const button = document.querySelector('.keyboard button[data-letter="' + guessedLetter + '"]');
-        if (button) {
-            button.disabled = true;
-        }
     }
 
     // Count the number of revealed letters
     let revealedLetters = 0;
     for (let i = 0; i < placeholders.length; i++) {
         if (placeholders[i].textContent !== '_') {
+            placeholders[i].classList.add('animated');
             revealedLetters++;
         }
     }
 
-    // Check if all letters in the word have been revealed
-    if (revealedLetters === word.length) {
-        const playAgain = confirm("YOU WIN! Do you want to play again?");
-        if (playAgain) {
-            resetGame();
-        }
+    // Check if all letters have been revealed
+    if (revealedLetters === placeholders.length) {
+        wordDisplay.classList.add('word-revealed');
+        // Add a delay before prompting to play again
+        setTimeout(() => {
+            const playAgain = confirm("YOU WIN! Do you want to play again?");
+            if (playAgain) {
+                resetGame();
+            }
+        }, 1000); // Adjust delay time as needed
     }
 
-    if (wrongGuesses >= 6){
+    if (wrongGuesses >= 6) {
         document.getElementById("hangmanImage").src = "images/hangman-" + 6 + ".svg";
-        endCount()
+        // Add a delay before showing game over
+        setTimeout(() => {
+            endCount();
+        }, 1000); // Adjust delay time as needed
     }
 }
+
+function endCount() {
+    timeH.innerHTML = "Time out";
+
+    // Disable the input field
+    document.getElementById("wordInput").disabled = true;
+
+    // Hide the keyboard
+    document.querySelector(".keyboard").style.display = "none";
+
+    // Add a delay before showing game over
+    setTimeout(() => {
+        const playAgain = confirm("Game Over! Do you want to play again?");
+        if (playAgain) {
+            // Code to reset the game or navigate to the start of a new game
+            resetGame();
+        }
+    }, 1000); // Adjust delay time as needed
+
+}
+
 
 
 
@@ -226,29 +248,35 @@ function updateGrid() {
     });
 }
 
-
 //keyboard functionality
 document.querySelectorAll('.keyboard button').forEach(button => {
     button.addEventListener('click', () => {
         const key = button.textContent.toLowerCase(); //lowercase letter of the button
         if (key === 'enter') {
             //enter key
-            var inputText = document.getElementById("wordInput").value;
+            var inputText = document.getElementById("wordInput").textContent;
             addGuessedWord(inputText);
-            document.getElementById("wordInput").value = "";
+            document.getElementById("wordInput").textContent = "";
         } else if (key === 'del') {
             //delete key
-            document.getElementById("wordInput").value = "";
+            document.getElementById("wordInput").textContent = "";
         } else {
             //add keys
-            document.getElementById("wordInput").value += key;
+            const wordInput = document.getElementById("wordInput");
+            wordInput.textContent += key;
             revealLetter(currentWord, key);
+            if (!isCorrectLetter(currentWord, key)) {
+                button.disabled = true; // Disable the button if the letter is incorrect
+                button.classList.add('disabled'); // Add disabled class to visually gray out the button
+            }
         }
-
-
-
     });
 });
+
+// Function to check if the guessed letter is correct
+function isCorrectLetter(word, guessedLetter) {
+    return word.includes(guessedLetter);
+}
 
 
 //timer functionality

@@ -73,6 +73,16 @@
     z-index: 1000; /* Ensure it's above other content */
 }
 
+footer {
+    background-color: #e6e6dd;
+    color: black;
+    padding: 20px;
+    text-align: left;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 .logo {
     height: 15%;
     display: block;
@@ -258,10 +268,10 @@ h1 {
 
 #wordInput {
     width: calc(100% - 120px);
-//margin-right: 10px;
+    margin-right: 10px;
     padding: 8px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
     margin-left: 30px;
     margin-top: 25px;
@@ -305,4 +315,54 @@ h1 {
     text-align: center; /* Center the text horizontally */
     margin-top: 20px; /* Add some top margin for spacing */
     /* Add more styles as needed */
+}
+
+@keyframes revealAnimation {
+    from {
+        opacity: 0; /* Start with zero opacity */
+        transform: scale(0.5); /* Start with smaller size */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+        transform: scale(1); /* End with original size */
+    }
+}
+
+/* Apply the animation to revealed letters */
+.letter-placeholder.animated {
+    animation: revealAnimation 0.5s ease forwards; /* Apply animation with 0.5s duration */
+}
+
+@keyframes wordAnimation {
+    0% {
+        background-color: transparent;
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        background-color: transparent;
+        transform: translateY(-20px); /* Bounce up */
+    }
+    100% {
+        background-color: #b8d8be;
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+/* Apply animation to word display container when all letters are revealed */
+#displayWord.word-revealed {
+    animation: wordAnimation 1s ease forwards; /* Apply animation with 1s duration */
+}
+
+#hangmanGrid {
+    display: flex;
+    justify-content: right; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 150px; /* Adjust height as needed */
+    margin-left: 100px;
+}
+
+.keyboard button.disabled {
+    background-color: #ccc; /* Change the background color to grey */
+    color: #666; /* Change the text color to a darker grey */
+    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
 }
