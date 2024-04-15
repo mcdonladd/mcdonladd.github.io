@@ -74,13 +74,12 @@
 }
 
 footer {
-    background-color: #e6e6dd;
-    color: black;
-    padding: 20px;
-    text-align: left;
+    top: 0;
     left: 0;
-    bottom: 0;
     width: 100%;
+    background-color: #e6e6dd; /* Change background color as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
 }
 
 .logo {
@@ -365,4 +364,56 @@ h1 {
     background-color: #ccc; /* Change the background color to grey */
     color: #666; /* Change the text color to a darker grey */
     cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+}
+
+.about-section {
+    background-color: #e6e6dd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.about-text em {
+    font-style: italic;
+}
+
+.about-text strong {
+    font-weight: bold;
+}
+
+/* CSS for word reveal animation when the game is lost */
+.word-lost {
+    animation: shake 0.5s ease-in-out; /* Define the animation for the lost word */
+}
+
+/* Shake animation - https://teamtreehouse.com/community/shake-effect-with-javascript-only */
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
