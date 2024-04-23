@@ -77,11 +77,11 @@ function clearInput() {
 }
 
 // Function to submit the word
-function submitWord() {
+async function submitWord() {
     const inputField = document.getElementById('wordInput');
     const word = inputField.value.trim().toLowerCase();
     if (word.length > 0) {
-        if (isValidInput(word)) {
+        if (isValidInput(word) && await isValidWord(word)) {
             addGuessedWord(word);
             clearInput();
         } else {
@@ -91,12 +91,34 @@ function submitWord() {
     }
 }
 
+
 // Function to check if the input word is valid
 function isValidInput(word) {
     const inputLetters = word.split('');
     const randomLettersArray = randomLetters.toLowerCase().split('');
     return inputLetters.every(letter => randomLettersArray.includes(letter));
 }
+
+//checks that the word is valid
+function isValidWord(word) {
+    // Make a request to the dictionary API endpoint for the word
+    return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+        .then(response => {
+            // Check if the response status is OK (200)
+            if (response.ok) {
+                // The word exists in the dictionary
+                return true;
+            } else {
+                // The word does not exist in the dictionary
+                return false;
+            }
+        })
+        .catch(error => {
+            console.error('Error checking word validity:', error);
+            return false; // Assuming any error means the word is not valid
+        });
+}
+
 
 // Event listener for Enter key press
 document.getElementById('wordInput').addEventListener('keypress', event => {
