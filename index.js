@@ -1,7 +1,7 @@
 var slideIndex = 0;
 var timer;
 
-// Function to show images
+
 
 // adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
 
@@ -11,7 +11,7 @@ function plusDivs(n) {
     showSlides(slideIndex += n);
 }
 
-
+// Function to show images
 function showSlides() {
     var slides = document.getElementsByClassName("tile");
     for (var i = 0; i < slides.length; i++) {
