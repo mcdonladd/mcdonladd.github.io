@@ -97,30 +97,30 @@ async function submitWord() {
 }
 
 
-// Function to check if the input word is valid
+// Function to check if the input word matches letters given
 function isValidInput(word) {
     const inputLetters = word.split('');
     const randomLettersArray = randomLetters.toLowerCase().split('');
     return inputLetters.every(letter => randomLettersArray.includes(letter));
 }
 
-//checks that the word is valid
+//checks that the word is valid in dictionary
 function isValidWord(word) {
-    // Make a request to the dictionary API endpoint for the word
+    // request dictionary api
     return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then(response => {
             // Check if the response status is OK (200)
             if (response.ok) {
-                // The word exists in the dictionary
+                // word exists in the dictionary
                 return true;
             } else {
-                // The word does not exist in the dictionary
+                // word does not exist in the dictionary
                 return false;
             }
         })
         .catch(error => {
             console.error('Error checking word validity:', error);
-            return false; // Assuming any error means the word is not valid
+            return false;
         });
 }
 
@@ -128,7 +128,7 @@ function isValidWord(word) {
 // Event listener for Enter key press
 document.getElementById('wordInput').addEventListener('keypress', event => {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
         submitWord();
     }
 });

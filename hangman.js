@@ -2,6 +2,7 @@
 
 let currentWord = '';
 
+// function that displays hint and retrieves word from word list
 const getWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
     document.getElementById("hintDisplay").innerText = hint;
@@ -10,6 +11,7 @@ const getWord = () => {
     return word;
 }
 
+// function that takes word and replaces letters with underscores
 function initializeWordDisplay(word) {
     const wordDisplay = document.getElementById("displayWord");
     wordDisplay.innerHTML = '';
@@ -23,6 +25,7 @@ function initializeWordDisplay(word) {
 
 let wrongGuesses = 0;
 
+// reveals the word based
 function revealWord(word) {
     const wordDisplay = document.getElementById("displayWord");
     const placeholders = wordDisplay.getElementsByClassName('letter-placeholder');
@@ -34,7 +37,7 @@ function revealWord(word) {
     }
 }
 
-
+// reveals the letter based on input / ends game based on number of guesses
 function revealLetter(word, guessedLetter) {
     const wordDisplay = document.getElementById("displayWord");
     const placeholders = wordDisplay.getElementsByClassName('letter-placeholder');
@@ -59,7 +62,6 @@ function revealLetter(word, guessedLetter) {
     }
 
     if (revealedLetters === placeholders.length && wrongGuesses < 6) {
-        // Check if all letters are revealed and the game is not lost
         wordDisplay.classList.add('word-revealed');
         setTimeout(() => {
             const playAgain = confirm("YOU WIN! Do you want to play again?");
@@ -70,7 +72,6 @@ function revealLetter(word, guessedLetter) {
     }
 
     if (wrongGuesses >= 6) {
-        // If the game is lost, reveal the word with the "lost" animation
         revealWord(word);
         setTimeout(() => {
             endCount();
@@ -79,7 +80,7 @@ function revealLetter(word, guessedLetter) {
 }
 
 
-
+// disables keyboard button of guessed letters
 document.querySelectorAll('.keyboard button').forEach(button => {
     button.addEventListener('click', () => {
         const key = button.textContent.toLowerCase();
@@ -101,6 +102,7 @@ document.querySelectorAll('.keyboard button').forEach(button => {
     });
 });
 
+// word contains letter
 function isCorrectLetter(word, guessedLetter) {
     return word.includes(guessedLetter);
 }

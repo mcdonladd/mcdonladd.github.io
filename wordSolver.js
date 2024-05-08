@@ -1,13 +1,17 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
+
+    // gets word from hint and word from word list
     const getWord = () => {
         const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
         document.getElementById("hintDisplay").innerHTML = `<p>Hint: ${hint}</p>`;
         return { word, hint };
     };
 
+    // correct or incorrect
     document.querySelectorAll('.wordButton').forEach(button => {
         button.addEventListener('click', function() {
-            const selectedWord = this.innerText;
             const correctWord = wordObj.word;
 
             if (selectedWord === correctWord) {
@@ -20,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // shuffles array to display words in random order
     const shuffle = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -28,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return array;
     };
 
+    // creates array with the word and 2 random from word list
     function createArray(wordObj) {
         const word = wordObj.word;
         const filteredWords = wordList.filter(item => item.word !== word);

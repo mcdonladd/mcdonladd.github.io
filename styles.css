@@ -7,23 +7,22 @@
     top: 8px;
     left: 16px;
     font-size: 18px;
-    z-index: 2000; /* Ensure it's above other content */
+    z-index: 2000;
 }
 
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    z-index: 2000; /* Ensure it's above other content */
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    z-index: 2000;
 }
 
-/* The navigation menu links */
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -32,15 +31,12 @@
     display: block;
     transition: 0.3s;
     font-family: Cheltenham;
-
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
     color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -54,10 +50,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #e6e6dd; /* Change background color as needed */
-    padding: 10px 20px; /* Adjust padding as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
-    z-index: 1000; /* Ensure it's above other content */
+    background-color: #e6e6dd;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 .logo {
@@ -75,13 +71,12 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #e6e6dd; /* Change background color as needed */
-    padding: 10px 20px; /* Adjust padding as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+    background-color: #e6e6dd;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* styling for index page */
-
 .middlesection {
     padding: 20px;
     margin-top: 100px;
@@ -94,18 +89,17 @@ footer {
 }
 
 .index-content {
-    background-color: #fff; /* Changed background color */
+    background-color: #fff;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: space-around; /* Evenly distribute items */
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    width: 80%; /* Adjusted width */
-    max-width: 800px; /* Added max-width for responsiveness */
+    width: 80%;
+    max-width: 800px;
     padding: 20px;
-    border-radius: 10px; /* Added border-radius for rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adjusted shadow effect */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .images {
     flex: 0 1 calc(25% - 20px);
@@ -134,22 +128,22 @@ footer {
 }
 
 .tile {
-    width: 400px; /* Set the fixed width */
-    height: 400px; /* Set the fixed height */
+    width: 400px;
+    height: 400px;
     position: relative;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     overflow: hidden;
 }
-
 
 .text {
     color: white;
     font-size: 20px;
 }
 
+/* info page */
 
 .infoSection {
     display: flex;
@@ -180,7 +174,7 @@ footer {
     width: 100%;
 }
 
-
+/* style for games  */
 
 .keyboard {
     width: 100%;
@@ -222,8 +216,8 @@ footer {
     background-color: #809bce;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0efeb;
@@ -246,7 +240,6 @@ body {
     display: flex;
     align-items: flex-start;
     padding: 50px;
-
 }
 
 h1 {
@@ -255,7 +248,6 @@ h1 {
     font-family: Cheltenham;
     font-weight: bold;
 }
-
 
 #hintDisplay{
     display: flex;
@@ -272,7 +264,6 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-bottom: 20px;
-
 }
 
 #grid div {
@@ -299,8 +290,8 @@ h1 {
 
 #guessedWords {
     margin-bottom: 20px;
-    display: flex; /* Add this line */
-    flex-wrap: wrap; /* Allow wrapping */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #score {
@@ -310,6 +301,17 @@ h1 {
 
 #timer {
     font-size: 18px;
+}
+
+.wordButton {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+#guessButtons {
+    text-align: center;
+    padding: 40px;
 }
 
 @keyframes flip {
@@ -331,62 +333,86 @@ h1 {
 #displayWord {
     font-family: Cheltenham;
     font-size: 50px;
-    color: #333; /* Change the color to your preference */
-    text-align: center; /* Center the text horizontally */
-    margin-top: 20px; /* Add some top margin for spacing */
-    /* Add more styles as needed */
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
     letter-spacing: 5px;
 }
 
 @keyframes revealAnimation {
     from {
-        opacity: 0; /* Start with zero opacity */
-        transform: scale(0.5); /* Start with smaller size */
+        opacity: 0;
+        transform: scale(0.5);
     }
     to {
-        opacity: 1; /* End with full opacity */
-        transform: scale(1); /* End with original size */
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-/* Apply the animation to revealed letters */
 .letter-placeholder.animated {
-    animation: revealAnimation 0.5s ease forwards; /* Apply animation with 0.5s duration */
+    animation: revealAnimation 0.5s ease forwards;
 }
 
 @keyframes wordAnimation {
     0% {
         background-color: transparent;
-        transform: translateY(0); /* Initial position */
+        transform: translateY(0);
     }
     50% {
         background-color: transparent;
-        transform: translateY(-20px); /* Bounce up */
+        transform: translateY(-20px);
     }
     100% {
         background-color: #b8d8be;
-        transform: translateY(0); /* Back to original position */
+        transform: translateY(0);
     }
 }
 
-/* Apply animation to word display container when all letters are revealed */
 #displayWord.word-revealed {
-    animation: wordAnimation 1s ease forwards; /* Apply animation with 1s duration */
+    animation: wordAnimation 1s ease forwards;
 }
 
 #hangmanGrid {
     display: flex;
-    justify-content: right; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    height: 150px; /* Adjust height as needed */
+    justify-content: right;
+    align-items: center;
+    height: 150px;
     margin-left: 100px;
 }
 
 .keyboard button.disabled {
-    background-color: #ccc; /* Change the background color to grey */
-    color: #666; /* Change the text color to a darker grey */
-    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
 }
+
+.word-lost {
+    animation: shake 0.5s ease-in-out;
+}
+
+
+/* Shake animation - https://teamtreehouse.com/community/shake-effect-with-javascript-only */
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+/* info page styling */
 
 .about-section {
     background-color: #e6e6dd;
@@ -416,37 +442,4 @@ h1 {
     font-weight: bold;
 }
 
-/* CSS for word reveal animation when the game is lost */
-.word-lost {
-    animation: shake 0.5s ease-in-out; /* Define the animation for the lost word */
-}
 
-/* Shake animation - https://teamtreehouse.com/community/shake-effect-with-javascript-only */
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
-
-.wordButton {
-    margin: 10px; /* Add some margin to create space between buttons */
-    padding: 15px 30px; /* Adjust padding to increase button size */
-    font-size: 18px; /* Adjust font size for button text */
-}
-
-#guessButtons {
-    text-align: center; /* Center-align the buttons */
-    padding: 40px;
-}
