@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.wordButton').forEach(button => {
         button.addEventListener('click', function() {
             const correctWord = wordObj.word;
-
+            selectedWord = this.innerText
             if (selectedWord === correctWord) {
                 alert('Correct! You win!');
                 setTimeout(() => { location.reload(true); }, 1000);
