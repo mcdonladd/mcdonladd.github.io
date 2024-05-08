@@ -2,17 +2,22 @@
 
 let score = 0;
 
+let guessedWords = new Set(); // Maintain a set to store unique guessed words
+
 function addGuessedWord(word) {
-    var paragraph = document.createElement("p");
-    paragraph.textContent = word;
-    paragraph.style.margin = "5px 0";
-    paragraph.style.padding = "5px 10px";
-    paragraph.style.backgroundColor = "#809bce";
-    paragraph.style.borderRadius = "5px";
-    paragraph.style.fontStyle = "Cheltenham";
-    document.getElementById("guessedWords").appendChild(paragraph);
-    score += word.length;
-    document.getElementById("scoreValue").textContent = score;
+    if (!guessedWords.has(word)) { // Check if the word is not already in the set
+        var paragraph = document.createElement("p");
+        paragraph.textContent = word;
+        paragraph.style.margin = "5px 0";
+        paragraph.style.padding = "5px 10px";
+        paragraph.style.backgroundColor = "#809bce";
+        paragraph.style.borderRadius = "5px";
+        paragraph.style.fontStyle = "Cheltenham";
+        document.getElementById("guessedWords").appendChild(paragraph);
+        score += word.length;
+        document.getElementById("scoreValue").textContent = score;
+        guessedWords.add(word); // Add the word to the set
+    }
 }
 
 let randomLetters = '';

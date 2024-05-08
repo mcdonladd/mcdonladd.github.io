@@ -33,10 +33,12 @@ function displayTime(second) {
   `;
 }
 
+// function to reset games
 function resetGame() {
     location.reload();
 }
 
+//function that removes functionality from game when it is over
 function endCount() {
     timeH.innerHTML = "Time out";
     document.getElementById("wordInput").disabled = true;

@@ -1,5 +1,7 @@
 
 
+/* top bar and side navigation */
+
 .topleft {
     position: absolute;
     top: 8px;
@@ -8,9 +10,6 @@
     z-index: 2000; /* Ensure it's above other content */
 }
 
-
-
-/* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -50,18 +49,6 @@
     margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-
 .top-bar {
     position: fixed;
     top: 0;
@@ -73,6 +60,17 @@
     z-index: 1000; /* Ensure it's above other content */
 }
 
+.logo {
+    height: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+
+/*footer styling */
+
 footer {
     top: 0;
     left: 0;
@@ -82,83 +80,57 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
 }
 
-.logo {
-    height: 15%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 15%;
-}
+/* styling for index page */
 
 .middlesection {
     padding: 20px;
     margin-top: 100px;
-    background-color: #809bce;
+    background-color: #f0efeb;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .index-content {
-    background-color: #e6e6dd;
+    background-color: #fff; /* Changed background color */
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around; /* Evenly distribute items */
     align-items: center;
-    width: 450px;
-    height: 450px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
-    position: relative; /* Ensure position:relative for positioning children */
-}
-
-.scroll-buttons {
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    margin-top: 10px; /* Adjust as needed */
-}
-
-.scroll-buttons button {
-    margin: 0 5px; /* Adjust spacing between buttons */
-}
-
-
-.infoSection {
-    display: flex; /* Ensure flex layout */
-    flex-wrap: wrap; /* Allow wrapping */
-    justify-content: space-between; /* Adjust alignment to space between */
-    gap: 20px;
+    width: 80%; /* Adjusted width */
+    max-width: 800px; /* Added max-width for responsiveness */
     padding: 20px;
-    margin-top: 100px;
-    background-color: #809bce; /* Change background color as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
-    position: relative;
+    border-radius: 10px; /* Added border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adjusted shadow effect */
 }
 
 
-.infoBoxes-container {
-    display: flex;
-    flex-direction: row; /* Ensure horizontal alignment */
-    justify-content: space-around; /* Adjust alignment as needed */
-    gap: 20px;
+.images {
+    flex: 0 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    margin: 10px;
+    text-align: center;
 }
 
-.infoBox {
-    flex: 1;
-    max-width: 300px; /* Adjust maximum width as needed */
-    padding: 20px;
-    background-color: #a7bed3; /* Change background color as needed */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+.images img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
-.infoContent {
-    padding: 20px;
-    background-color: #a7bed3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-    width: 100%;
+.image-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.image-link:hover {
+    color: #666;
 }
 
 .tile {
@@ -172,37 +144,43 @@ footer {
     overflow: hidden;
 }
 
-.image-container {
-    position: relative; /* Positioning context for absolute positioning */
-}
-
-.images {
-    position: relative;
-    display: inline-block;
-}
-
-.image-link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    visibility: hidden;
-    transition: visibility 0.3s ease;
-}
-
-.images:hover .image-link {
-    visibility: visible;
-}
 
 .text {
     color: white;
     font-size: 20px;
 }
+
+
+.infoSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px;
+    background-color: #809bce;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.infoBox {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #a7bed3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.infoContent {
+    padding: 20px;
+    background-color: #a7bed3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+}
+
+
 
 .keyboard {
     width: 100%;
@@ -462,8 +440,13 @@ h1 {
     }
 }
 
-.wordButton{
-    font-size: 20px;
-    padding: 10px;
-    background-color: #e6e6dd;
+.wordButton {
+    margin: 10px; /* Add some margin to create space between buttons */
+    padding: 15px 30px; /* Adjust padding to increase button size */
+    font-size: 18px; /* Adjust font size for button text */
+}
+
+#guessButtons {
+    text-align: center; /* Center-align the buttons */
+    padding: 40px;
 }
